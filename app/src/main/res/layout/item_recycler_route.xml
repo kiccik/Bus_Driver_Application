@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginHorizontal="8dp">
+
+    <TextView
+        android:id="@+id/stop_name"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="정류장 이름"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        android:ellipsize="marquee"
+        android:singleLine="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/arrow_image"
+        app:layout_constraintBottom_toTopOf="@id/mobile_no"/>
+
+    <TextView
+        android:id="@+id/mobile_no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="mobile no"
+        android:textSize="12dp"
+        app:layout_constraintTop_toBottomOf="@id/stop_name"
+        app:layout_constraintLeft_toLeftOf="@id/stop_name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <CheckBox
+        android:id="@+id/route_star_cb"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginRight="30dp"
+        android:button="@drawable/btn_star"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/route_alarm_cb"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:button="@drawable/btn_alarm"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/route_star_cb"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/up_view"
+        android:layout_width="5dp"
+        android:layout_height="25dp"
+        android:background="#969696"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/arrow_image"
+        app:layout_constraintRight_toRightOf="@id/arrow_image"/>
+
+    <ImageView
+        android:id="@+id/arrow_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:background="@drawable/oval_background"
+        android:layout_marginLeft="10dp"
+        app:srcCompat="@drawable/ic_baseline_keyboard_arrow_down_24"
+        app:layout_constraintTop_toBottomOf="@id/up_view"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <TextView
+        android:id="@+id/route_turn"
+        android:layout_width="35dp"
+        android:layout_height="wrap_content"
+        android:paddingLeft="6dp"
+        android:paddingTop="2dp"
+        android:background="@drawable/rectangle_backgroind"
+        android:text="회차"
+        android:textSize="13dp"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@id/up_view"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <View
+        android:id="@+id/down_view"
+        android:layout_width="5dp"
+        android:layout_height="25dp"
+        android:background="#969696"
+        app:layout_constraintTop_toBottomOf="@id/arrow_image"
+        app:layout_constraintLeft_toLeftOf="@id/arrow_image"
+        app:layout_constraintRight_toRightOf="@id/arrow_image"/>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="0dp"
+        android:background="#000000"
+        app:layout_constraintTop_toBottomOf="@id/down_view"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

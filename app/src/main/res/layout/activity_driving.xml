@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.Activity.DrivingActivity"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/shape_activity_side">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/bus"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="버스기사 앱"
+        android:textSize="30dp"
+        android:textColor="#000000"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="운행중..."
+        android:textSize="30dp"
+        android:paddingBottom="50dp"
+        android:textColor="#0000FF"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="운행 정보"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:background="@drawable/driving_info"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="버스 번호 :"
+            android:textSize="15dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textColor="#080808"
+            android:background="@drawable/driving_semi_info"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textColor="#080808"
+            android:background="@drawable/driving_semi_info"
+            android:id="@+id/driving_bus_number"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="버스 번호 :"
+            android:textSize="15dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textColor="#080808"
+            android:background="@drawable/driving_semi_info"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textColor="#080808"
+            android:background="@drawable/driving_semi_info"
+            android:id="@+id/driving_vehicle_number"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_margin="10dp">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="운행종료"
+            android:background="@drawable/button"
+            android:layout_margin="10dp"
+            android:id="@+id/stop_driving"
+            />
+    </LinearLayout>
+
+</LinearLayout>
