@@ -49,35 +49,6 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.appcompat.widget.Toolbar>
 
-        <RadioGroup
-            android:id="@+id/search_radio_group"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:checkedButton="@id/search_bus"
-            android:orientation="horizontal">
-
-            <RadioButton
-                android:id="@+id/search_bus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/btn_radio_main"
-                android:button="@null"
-                android:gravity="center"
-                android:text="버스"
-                android:textColor="@drawable/text_radio_main" />
-
-            <RadioButton
-                android:id="@+id/search_stop"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/btn_radio_main"
-                android:button="@null"
-                android:gravity="center"
-                android:text="정류장"
-                android:textColor="@drawable/text_radio_main" />
-        </RadioGroup>
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -92,15 +63,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"/>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_stop_search"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>

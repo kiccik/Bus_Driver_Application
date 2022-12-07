@@ -1,17 +1,20 @@
 package com.example.bus_driver_application.Adapter
 
-//import ac.kr.tukorea.bus_application.Data.Remote.DTO.SearchRouteDTO
-//import ac.kr.tukorea.bus_application.View.Activity.RouteDetailsActivity import ac.kr.tukorea.bus_application.databinding.ItemRecyclerSearchBusBinding
+import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import com.example.bus_driver_application.DTO.SearchRouteDTO
-import com.example.bus_driver_application.View.RouteDetailsActivity
+import com.example.bus_driver_application.View.MainActivity
+import com.example.bus_driver_application.View.SearchActivity
 import com.example.bus_driver_application.databinding.ItemRecyclerSearchBusBinding
 
-class SearchRouteListAdapter(private val items : ArrayList<SearchRouteDTO>) : Adapter<SearchRouteListAdapter.MyBusList>(){
+class SearchRouteListAdapter(
+    private val items : ArrayList<SearchRouteDTO>,
+    val c : Context,
+    val vehicle_number : String) : Adapter<SearchRouteListAdapter.MyBusList>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyBusList {
         val view = ItemRecyclerSearchBusBinding.inflate(LayoutInflater.from(parent.context), parent, false)
 
@@ -35,11 +38,15 @@ class SearchRouteListAdapter(private val items : ArrayList<SearchRouteDTO>) : Ad
             binding.busTime.text = item.up_first_time + " ~ " + item.up_last_time + " | " + item.peek + " ~ " + item.npeek + "분"
 
             binding.root.setOnClickListener {
-                var intent = Intent(binding.root.context, RouteDetailsActivity::class.java)
-                intent.putExtra("item", item)
-                binding.root.context.startActivity(intent)
+                var activity = c as SearchActivity
+                var intent = Intent(c, MainActivity::class.java)
+
+                intent.putExtra("route_id", item.id)
+                intent.putExtra("bus_name", item.name)
+                intent.putExtra("vehicle_number", vehicle_number)
+                activity.startActivity(intent)
+                activity.finish()
             }
         }
     }
-
 }

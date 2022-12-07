@@ -1,25 +1,22 @@
 package com.example.bus_driver_application.Adapter
 
-//import ac.kr.tukorea.bus_application.Data.Remote.DTO.RouteDetailsStopDTO
-//import ac.kr.tukorea.bus_application.View.Activity.KakaoMapActivity
+import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.bus_driver_application.DB.Database.AppDatabase
 import com.example.bus_driver_application.DTO.RouteDetailsStopDTO
-import com.example.bus_driver_application.DTO.SearchRouteDTO
-import com.example.bus_driver_application.View.KakaoMapActivity
+import com.example.bus_driver_application.View.MainActivity
+import com.example.bus_driver_application.View.RouteDetailsActivity
 import com.example.bus_driver_application.databinding.ItemRecyclerRouteBinding
 
 class RouteDetailsListAdapter(
     private val items: ArrayList<RouteDetailsStopDTO>,
-    checked_star: ArrayList<Boolean>,
-    checked_alarm: ArrayList<Boolean>,
-    item: SearchRouteDTO,
-    db: AppDatabase
-) : RecyclerView.Adapter<RouteDetailsListAdapter.MyRouteDetails>(){
+    val c : Context,
+    val route_id : Int,
+    val bus_name : String,
+    val vehicle_number : String): RecyclerView.Adapter<RouteDetailsListAdapter.MyRouteDetails>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyRouteDetails {
         val view = ItemRecyclerRouteBinding.inflate(LayoutInflater.from(parent.context), parent, false)
 
@@ -60,8 +57,15 @@ class RouteDetailsListAdapter(
             binding.mobileNo.text = item.mobile_no
 
             binding.root.setOnClickListener {
-                var intent = Intent(binding.root.context, KakaoMapActivity::class.java)
-                binding.root.context.startActivity(intent)
+                var activity = c as RouteDetailsActivity
+                var intent = Intent(c, MainActivity::class.java)
+
+                intent.putExtra("init_order", item.stop_order)
+                intent.putExtra("route_id", route_id)
+                intent.putExtra("bus_name", bus_name)
+                intent.putExtra("vehicle_number", vehicle_number)
+                activity.startActivity(intent)
+                activity.finish()
             }
         }
     }

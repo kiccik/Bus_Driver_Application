@@ -10,11 +10,10 @@ class DrivingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDrivingBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        //setContentView(R.layout.activity_driving)
 
         var Intent = intent
 
-        binding.drivingBusNumber.text = Intent.getStringExtra("bus_number")
+        binding.drivingBusNumber.text = Intent.getStringExtra("bus_name")
         binding.drivingVehicleNumber.text = Intent.getStringExtra("vehicle_number")
         binding.stopDriving.setOnClickListener{
             finish()
