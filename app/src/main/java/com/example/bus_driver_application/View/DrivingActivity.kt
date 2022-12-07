@@ -1,7 +1,7 @@
 package com.example.bus_driver_application.View
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.bus_driver_application.databinding.ActivityDrivingBinding
 
 private lateinit var binding: ActivityDrivingBinding

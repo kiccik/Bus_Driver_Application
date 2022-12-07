@@ -1,8 +1,8 @@
 package com.example.bus_driver_application.View
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.bus_driver_application.Adapter.RouteDetailsListAdapter
 import com.example.bus_driver_application.Client.RetrofitClient
