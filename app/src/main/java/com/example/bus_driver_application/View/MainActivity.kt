@@ -1,24 +1,12 @@
 package com.example.bus_driver_application.View
 
-import android.Manifest
-import android.content.Context
 import android.content.Intent
-import android.content.pm.PackageManager
-import android.location.Address
-import android.location.Geocoder
-import android.location.Location
-import android.location.LocationManager
 import android.os.Bundle
-import android.util.Log
 import android.widget.SearchView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.motion.widget.Debug.getLocation
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import com.example.bus_driver_application.databinding.ActivityMainBinding
-import java.io.IOException
-import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -72,6 +60,8 @@ class MainActivity : AppCompatActivity() {
                 val intent  = Intent(application, DrivingActivity::class.java)
                 intent.putExtra("bus_name", bus_name)
                 intent.putExtra("vehicle_number", binding.vehicleNumber.text.toString())
+                intent.putExtra("route_id", routeid)
+                intent.putExtra("init_order", init_order)
                 getLocation()
                 startActivity(intent)
             }
