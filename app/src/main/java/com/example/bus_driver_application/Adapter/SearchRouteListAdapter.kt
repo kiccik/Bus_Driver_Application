@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import com.example.bus_driver_application.DTO.SearchRouteDTO
+import com.example.bus_driver_application.View.RouteDetailsActivity
 import com.example.bus_driver_application.databinding.ItemRecyclerSearchBusBinding
 
 class SearchRouteListAdapter(private val items : ArrayList<SearchRouteDTO>) : Adapter<SearchRouteListAdapter.MyBusList>(){
@@ -33,11 +34,11 @@ class SearchRouteListAdapter(private val items : ArrayList<SearchRouteDTO>) : Ad
             binding.busRegion.text = item.region + " | " + item.st_sta_nm + " - " + item.ed_sta_nm
             binding.busTime.text = item.up_first_time + " ~ " + item.up_last_time + " | " + item.peek + " ~ " + item.npeek + "분"
 
-            /*binding.root.setOnClickListener {
+            binding.root.setOnClickListener {
                 var intent = Intent(binding.root.context, RouteDetailsActivity::class.java)
                 intent.putExtra("item", item)
                 binding.root.context.startActivity(intent)
-            }*/
+            }
         }
     }
 

@@ -7,10 +7,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.bus_driver_application.DB.Database.AppDatabase
 import com.example.bus_driver_application.DTO.RouteDetailsStopDTO
+import com.example.bus_driver_application.DTO.SearchRouteDTO
+import com.example.bus_driver_application.View.KakaoMapActivity
 import com.example.bus_driver_application.databinding.ItemRecyclerRouteBinding
 
-class RouteDetailsListAdapter(private val items : ArrayList<RouteDetailsStopDTO>) : RecyclerView.Adapter<RouteDetailsListAdapter.MyRouteDetails>(){
+class RouteDetailsListAdapter(
+    private val items: ArrayList<RouteDetailsStopDTO>,
+    checked_star: ArrayList<Boolean>,
+    checked_alarm: ArrayList<Boolean>,
+    item: SearchRouteDTO,
+    db: AppDatabase
+) : RecyclerView.Adapter<RouteDetailsListAdapter.MyRouteDetails>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyRouteDetails {
         val view = ItemRecyclerRouteBinding.inflate(LayoutInflater.from(parent.context), parent, false)
 
@@ -50,10 +59,10 @@ class RouteDetailsListAdapter(private val items : ArrayList<RouteDetailsStopDTO>
             binding.stopName.text = item.stop_name
             binding.mobileNo.text = item.mobile_no
 
-            /*binding.root.setOnClickListener {
+            binding.root.setOnClickListener {
                 var intent = Intent(binding.root.context, KakaoMapActivity::class.java)
                 binding.root.context.startActivity(intent)
-            }*/
+            }
         }
     }
 }
