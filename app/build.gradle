@@ -29,6 +29,9 @@ android {
         buildConfigField "String", "ENDPOINT_GET_ROUTE_LIST", properties['endpoint.getRouteList']
         buildConfigField "String", "ENDPOINT_GET_STOP_LIST", properties['endpoint.getStopList']
         buildConfigField "String", "ENDPOINT_GET_ROUTE_DETAILS_LIST", properties['endpoint.getRouteDetailsList']
+        buildConfigField "String", "ENDPOINT_POST_BUS", properties['endpoint.postBus']
+        buildConfigField "String", "ENDPOINT_DELETE_BUS", properties['endpoint.deleteBus']
+        buildConfigField "String", "ENDPOINT_PUT_BUS", properties['endpoint.putBus']
     }
 
     buildTypes {
